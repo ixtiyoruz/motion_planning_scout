@@ -12,7 +12,7 @@ from  std_srvs.srv import Empty
 #known pump geometry
 class LocalizationSolver:
     def __init__(self):
-        rospy.init_node('amcl_solver_node')
+        rospy.init_node('amcl_solver_node_')
         rospy.loginfo('amcl_solver_node node started')
         self.rospack = rospkg.RosPack()
         self.sb_pose = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.process_pose)
