@@ -5,11 +5,11 @@
 
   <arg name="use_map_topic" default="true" />
   <arg name="scan_topic" default="scan" />
-  
+
   <node name="amcl" pkg="amcl" type="amcl">
     <param name="use_map_topic" value="$(arg use_map_topic)"/>
     <rosparam command="load" file="$(find motion_planning_scout)/config/acml_config.yaml"/>
     <remap from="scan" to="$(arg scan_topic)"/>
   </node>
-  
+
 </launch>
