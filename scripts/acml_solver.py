@@ -23,11 +23,11 @@ class LocalizationSolver:
         # print("pose received", type(message.pose.covariance))
         cov = np.array(message.pose.covariance)
         
-        if(np.any(cov> 0.65)):
-            # invoke global_localization, with current covariance abd std
-            self.serive_global_localization()
-            print(np.max(cov))
-            pass
+        # if(np.any(cov> 0.65)):
+        #     # invoke global_localization, with current covariance abd std
+        #     self.serive_global_localization()
+        #     print(np.max(cov))
+        #     pass
 
 
 if __name__ =='__main__':
