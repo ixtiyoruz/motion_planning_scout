@@ -22,7 +22,7 @@ laser_likelihood_max_dist: 2.0
 update_min_d: 0.25
 update_min_a: 0.2
 odom_frame_id: odom
-global_frame_id: base_link    
+global_frame_id: map    
 base_frame_id: base_link    
 
 resample_interval: 1
