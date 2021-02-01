@@ -23,7 +23,7 @@ update_min_d: 0.15
 update_min_a: 0.1
 odom_frame_id: odom
 global_frame_id: base_link    
-base_frame_id: base_link    
+base_frame_id: map    
 
 resample_interval: 1
 transform_tolerance: 1.0
