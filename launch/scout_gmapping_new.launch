@@ -1,6 +1,6 @@
 <launch>
   <arg name="scan_topic" default="scan" />
-    <node pkg="motion_planning_scout" name="map_saver_node" type="map_saver_node"  respawn="true"/>
+    <node pkg="motion_planning_scout" name="map_saver_node" type="map_saver_node" output="screen" respawn="true"/>
     <node  pkg="gmapping" name="slam_gmapping" type="slam_gmapping" output="screen" >
       <rosparam command="load" file="$(find motion_planning_scout)/config/scout_slam_gmapping.yaml"/>
       <remap from="scan" to="$(arg scan_topic)"/>

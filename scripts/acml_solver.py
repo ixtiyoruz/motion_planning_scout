@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 import rospy
-from nav_msgs.msg import OccupancyGrid
-from nav_msgs.msg import MapMetaData
 import ros_numpy
 import std_msgs.msg
 import numpy as np
@@ -12,10 +10,9 @@ import os
 #known pump geometry
 class MapSaver:
     def __init__(self):
-        rospy.init_node('map_saver_node')
-        rospy.loginfo('map_saver node started')
+        rospy.init_node('amcl_solver_node')
+        rospy.loginfo('amcl_solver_node node started')
         self.rospack = rospkg.RosPack()
-        self.save_folder = self.rospack.get_path('motion_planning_scout') + "/maps/map"
         self.sb_map = rospy.Subscriber("/map", OccupancyGrid, self.process_map)
         # self.sb_map_meta = rospy.Subscriber("/map_metadata", MapMetaData, self.process_map_meta)
         rospy.spin()
