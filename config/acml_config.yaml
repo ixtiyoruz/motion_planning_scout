@@ -19,8 +19,8 @@ laser_sigma_hit: 0.2
 laser_lambda_short: 0.1
 laser_model_type: likelihood_field
 laser_likelihood_max_dist: 2.0
-update_min_d: 0.15
-update_min_a: 0.1
+update_min_d: 0.25
+update_min_a: 0.2
 odom_frame_id: odom
 global_frame_id: base_link    
 base_frame_id: base_link    
