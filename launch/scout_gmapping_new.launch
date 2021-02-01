@@ -1,0 +1,8 @@
+<launch>
+  <arg name="scan_topic" default="scan" />
+  
+    <node  pkg="gmapping" name="slam_gmapping" type="slam_gmapping" output="screen" >
+      <rosparam command="load" file="$(find tensorflow_tools)/config/scout_slam_gmapping.yaml"/>
+      <remap from="scan" to="$(arg scan_topic)"/>
+    </node>
+</launch>
