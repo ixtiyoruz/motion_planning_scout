@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<launch>
+   <arg
+    name="model" />
+  <!--node name="slam_gmapping" pkg="gmapping" type="slam_gmapping">
+    <remap from="scan" to="/scan"/>
+    <param name="base_link" value="base_link"/>
+  </node>
+
+  <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_laser4"
+    args="0.0 0.0 0.0 0.0 0.0  0.0 /base_footprint /base_link 10" / -->
+
+
+  <!-- <include file="$(find scout_gazebo_sim)/launch/scout_empty_world.launch" /> -->
+  <node pkg="tf" type="static_transform_publisher" name="sensor" args="0.140, 0.0, 0.7 0 0 0 base_link base_laser    100" />
+  <!-- <node pkg="gmapping" type="slam_gmapping" name="simple_gmapping" output="screen">  </node> -->
+ <arg
+    name="gui"
+    default="False" />
+  <param
+    name="robot_description"
+    textfile="$(find scout_description)/urdf/scout_mini_v2.urdf" />
+  <param
+    name="use_gui"
+    value="$(arg gui)" />
+  <node
+    name="joint_state_publisher"
+    pkg="joint_state_publisher"
+    type="joint_state_publisher" />
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" />
+    
+  <node name="rviz1" pkg="rviz" type="rviz" args="-d $(find scout_description)/rviz/mapping.rviz" />
+
+</launch>
+
