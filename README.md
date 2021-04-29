@@ -1,4 +1,5 @@
 # motion_planning_scout
+# still developing i am not sure i will disclouse the other source code.
 
 <pre>
 sudo ip link set can0 up type can bitrate 500000
